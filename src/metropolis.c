@@ -39,7 +39,7 @@ void metropolis(const real_t (*Function) (const vector_t*), vector_t* Vector_0, 
         sum_Vector(Vector_2, Vector_0);
 
         // Acceptance and step.
-        if(random_uniform() >= Function(Vector_2) / Function(Vector_0))
+        if(random_uniform() < Function(Vector_2) / Function(Vector_0))
             copy_Vector(Vector_0, Vector_2);
     }
 
