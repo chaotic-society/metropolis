@@ -19,10 +19,10 @@
 #include "vector.h"
 
 /**
- * @brief Vector "zero-constructor".
+ * @brief Vector "zeros-constructor".
  * 
  * @param Natural Size.
- * @return vector_t* 
+ * @return vector_t* Vector.
  */
 [[nodiscard]] vector_t* new_Vector(const unsigned int Natural) {
     #if !defined(NDEBUG)
@@ -45,6 +45,12 @@
     return Vector;
 }
 
+/**
+ * @brief Vector "ones-constructor".
+ * 
+ * @param Natural Size.
+ * @return vector_t* Vector.
+ */
 [[nodiscard]] vector_t* new_Vector_ones(const unsigned int Natural) {
     #if !defined(NDEBUG)
     assert(Natural > 0);
@@ -57,7 +63,7 @@
     #endif
 
     Vector->size = Natural;
-    Vector->elements = (real_t*) malloc(Natural * sizeof(real_t));
+    Vector->elements = (real_t*) calloc(Natural, sizeof(real_t));
 
     for(unsigned int j = 0; j < Natural; ++j)
         Vector->elements[j] = 1.0;
