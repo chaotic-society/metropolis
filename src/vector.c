@@ -14,6 +14,7 @@
 #endif
 
 #include <stdlib.h>
+#include <memory.h>
 
 #include "vector.h"
 
@@ -42,6 +43,20 @@
     #endif
 
     return Vector;
+}
+
+/**
+ * @brief Vector "copy"
+ * 
+ * @param Vector_0 Vector.
+ * @param Vector_1 Vector.
+ */
+void copy_Vector(vector_t* Vector_0, const vector_t* Vector_1) {
+    #if !defined(NDEBUG)
+    assert(Vector_0->size == Vector_1->size);
+    #endif
+
+    memcpy(Vector_0->elements, Vector_1->elements, Vector_0->size * sizeof(real_t));
 }
 
 /**
