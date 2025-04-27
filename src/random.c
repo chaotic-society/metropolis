@@ -45,9 +45,9 @@ void random_gaussian(vector_t* Vector_0, const vector_t* Vector_1) {
             Real = random_uniform();
         } while(Real <= TOLERANCE);
 
-        Vector_0->elements[j] = sqrtl(-2.0L * Real) * sin(2.0L * M_PI * random_uniform()) * Vector_1->elements[j];
+        Vector_0->elements[j] = sqrtl(-2.0L * log(Real)) * sin(2.0L * M_PI * random_uniform()) * Vector_1->elements[j];
         #else
-        Vector_0->elements[j] = sqrtl(-2.0L * random_uniform()) * sin(2.0L * M_PI * random_uniform()) * Vector_1->elements[j];
+        Vector_0->elements[j] = sqrtl(-2.0L * log(random_uniform())) * sin(2.0L * M_PI * random_uniform()) * Vector_1->elements[j];
         #endif
     }
 }
