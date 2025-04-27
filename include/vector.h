@@ -42,6 +42,8 @@ typedef struct Vector {
 // Vector methods.
 
 [[nodiscard]] vector_t* new_Vector(const unsigned int);
+[[nodiscard]] vector_t* new_Vector_ones(const unsigned int);
+
 void copy_Vector(vector_t*, const vector_t*);
 void free_Vector(vector_t*);
 

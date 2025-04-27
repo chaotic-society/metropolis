@@ -45,6 +45,30 @@
     return Vector;
 }
 
+[[nodiscard]] vector_t* new_Vector_ones(const unsigned int Natural) {
+    #if !defined(NDEBUG)
+    assert(Natural > 0);
+    #endif
+
+    vector_t* Vector = (vector_t*) malloc(sizeof(vector_t));
+
+    #if !defined(NDEBUG)
+    assert(Vector != NULL);
+    #endif
+
+    Vector->size = Natural;
+    Vector->elements = (real_t*) malloc(Natural * sizeof(real_t));
+
+    for(unsigned int j = 0; j < Natural; ++j)
+        Vector->elements[j] = 1.0;
+
+    #if !defined(NDEBUG)
+    assert(Vector->elements != NULL);
+    #endif
+
+    return Vector;
+}
+
 /**
  * @brief Vector "copy"
  * 
