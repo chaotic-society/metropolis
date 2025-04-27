@@ -19,6 +19,10 @@
  */
 typedef double real_t;
 
+#if !defined(TOLERANCE)
+#define TOLERANCE 2.0E-16L
+#endif
+
 // Vectors.
 
 /**

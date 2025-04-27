@@ -105,9 +105,9 @@ void sub_Vector(vector_t* Vector_0, const vector_t* Vector_1) {
  * @param Vector Vector.
  * @param real Scalar.
  */
-void mul_Vector(vector_t* Vector, const real_t real) {
+void mul_Vector(vector_t* Vector, const real_t Real) {
     for(unsigned int j = 0; j < Vector->size; ++j)
-        Vector->elements[j] *= real;
+        Vector->elements[j] *= Real;
 }
 
 /**
@@ -116,13 +116,13 @@ void mul_Vector(vector_t* Vector, const real_t real) {
  * @param Vector Vector.
  * @param real Scalar.
  */
-void div_Vector(vector_t* Vector, const real_t real) {
+void div_Vector(vector_t* Vector, const real_t Real) {
     #if !defined(NDEBUG)
-    assert(fabs(real) > 2.0E-16L); // [!] Temporary tolerance on small numbers.
+    assert(fabs(Real) > TOLERANCE);
     #endif
 
     for(unsigned int j = 0; j < Vector->size; ++j)
-        Vector->elements[j] /= real;
+        Vector->elements[j] /= Real;
 }
 
 /**
