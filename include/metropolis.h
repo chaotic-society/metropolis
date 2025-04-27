@@ -11,22 +11,9 @@
 #if !defined(METROPOLIS_H)
 #define METROPOLIS_H
 
-/**
- * @brief Real numbers.
- * 
- */
-typedef double real_t;
-
-/**
- * @brief Vector.
- * 
- */
-typedef struct Vector {
-    real_t* elements;
-    unsigned int size;
-} vector_t;
+#include "./vector.h"
 
 // Metropolis.
-vector_t metropolis(const real_t (*) (const vector_t), vector_t*, const vector_t, const unsigned int);
+void metropolis(const real_t (*) (const vector_t*), vector_t*, const vector_t*, const unsigned int);
 
 #endif
