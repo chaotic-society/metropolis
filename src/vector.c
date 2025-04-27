@@ -20,7 +20,7 @@
 /**
  * @brief Vector "zero-constructor".
  * 
- * @param Natural Natural.
+ * @param Natural Size.
  * @return vector_t* 
  */
 [[nodiscard]] vector_t* new_Vector(const unsigned int Natural) {
