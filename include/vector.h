@@ -20,6 +20,11 @@
 typedef double real_t;
 
 #if !defined(TOLERANCE)
+
+/**
+ * @brief Real tolerance.
+ * 
+ */
 #define TOLERANCE 2.0E-16L
 #endif
 
