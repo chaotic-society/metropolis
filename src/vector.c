@@ -14,6 +14,7 @@
 #endif
 
 #include <stdlib.h>
+#include <stdio.h>
 #include <memory.h>
 
 #include "vector.h"
@@ -173,4 +174,16 @@ real_t dot_Vector(const vector_t* Vector_0, const vector_t* Vector_1) {
         real += Vector_0->elements[j] * Vector_1->elements[j];
 
     return real;
+}
+
+/**
+ * @brief Vector print.
+ * 
+ * @param Vector Vector.
+ */
+void println_Vector(const vector_t* Vector) {
+    for(unsigned int j = 0; j < Vector->size - 1; ++j)
+        printf("%.2e ", Vector->elements[j]);
+    
+    printf("%.2e\n", Vector->elements[Vector->size - 1]);
 }
