@@ -13,7 +13,6 @@
 
 #include "./vector.h"
 
-// Metropolis.
 void metropolis(const real_t (*) (const vector_t*), vector_t*, const vector_t*, const unsigned int);
 
 #endif
