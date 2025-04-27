@@ -28,6 +28,10 @@ int main(int argc, char** argv) {
     for(unsigned int j = 0; j < Natural_2; ++j)
         metropolis(Function, Vector_0, Vector_1, Natural_1);
 
+    // Clean-up.
+    free_Vector(Vector_0);
+    free_Vector(Vector_1);
+
     return 0;
 }
 
