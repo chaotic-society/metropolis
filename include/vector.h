@@ -33,6 +33,7 @@ typedef struct Vector {
 // Vector methods.
 
 [[nodiscard]] vector_t* new_Vector(const unsigned int);
+void copy_Vector(vector_t*, const vector_t*);
 void free_Vector(vector_t*);
 
 void sum_Vector(vector_t*, const vector_t*);
