@@ -64,7 +64,7 @@
     #endif
 
     Vector->size = Natural;
-    Vector->elements = (real_t*) calloc(Natural, sizeof(real_t));
+    Vector->elements = (real_t*) malloc(Natural * sizeof(real_t));
 
     for(unsigned int j = 0; j < Natural; ++j)
         Vector->elements[j] = 1.0;
