@@ -194,8 +194,4 @@ void print_Vector(const vector_t* Vector) {
  * 
  * @param Vector Vector.
  */
-void println_Vector(const vector_t* Vector) {
-    
-    print_Vector(Vector);
-    printf("\n");
-}
+void println_Vector(const vector_t* Vector) { print_Vector(Vector); printf("\n"); }
