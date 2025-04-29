@@ -17,7 +17,7 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-#ifndef M_PI
+#if !defined(M_PI) // Fixes missing M_PI definition on some compilers.
 #define M_PI 3.141592653589793238462643
 #endif
 
