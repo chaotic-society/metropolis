@@ -25,8 +25,13 @@ int main(int argc, char** argv) {
     vector_t* Vector_1 = new_Vector_ones(Natural_0); // Deviations.
 
     // Metropolis.
-    for(unsigned int j = 0; j < Natural_2; ++j)
+    for(unsigned int j = 0; j < Natural_2; ++j) {
         metropolis(Function, Vector_0, Vector_1, Natural_1);
+        print_Vector(Vector_0);
+        
+        if (j + 1 < Natural_2)
+            printf(",\n");
+    }
 
     // Clean-up.
     free_Vector(Vector_0);

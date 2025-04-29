@@ -1,13 +1,16 @@
 .PHONY: all distclean
 
+BINEXT =
+
 ifeq ($(shell uname),Darwin) # Forces GCC (gcc-14, homebrew) instead of Clang.
 CC = gcc-14
+BINEXT = .out
 endif
 
 CFLAGS += -Wall -pedantic -std=c23 -march=native -Ofast -I./include
 
 # Executables.
-EXECUTABLES = $(subst src/,executables/,$(subst .c,.out,$(shell find src -name "Test_*.c")))
+EXECUTABLES = $(subst src/,executables/,$(subst .c,$(BINEXT),$(shell find src -name "Test_*.c")))
 
 # Objects.
 OBJECTS = $(subst src/,objects/,$(subst .c,.o,$(shell find src -name "*.c" -not -name "Test_*.c")))
@@ -20,7 +23,7 @@ all: $(DIRECTORIES) $(EXECUTABLES)
 	@echo "Compiled everything!"
 
 # Tests.
-$(EXECUTABLES): executables/Test_%.out: objects/Test_%.o $(OBJECTS) 
+$(EXECUTABLES): executables/Test_%$(BINEXT): objects/Test_%.o $(OBJECTS) 
 	@echo "Linking to $@"
 	@$(CC) $^ -o $@
 

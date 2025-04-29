@@ -181,9 +181,21 @@ real_t dot_Vector(const vector_t* Vector_0, const vector_t* Vector_1) {
  * 
  * @param Vector Vector.
  */
-void println_Vector(const vector_t* Vector) {
+void print_Vector(const vector_t* Vector) {
+
     for(unsigned int j = 0; j < Vector->size - 1; ++j)
         printf("%.2e ", Vector->elements[j]);
     
-    printf("%.2e\n", Vector->elements[Vector->size - 1]);
+    printf("%.2e", Vector->elements[Vector->size - 1]);
+}
+
+/**
+ * @brief Vector print with newline.
+ * 
+ * @param Vector Vector.
+ */
+void println_Vector(const vector_t* Vector) {
+    
+    print_Vector(Vector);
+    printf("\n");
 }
