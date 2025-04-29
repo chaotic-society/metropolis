@@ -55,7 +55,6 @@ void div_Vector(vector_t*, const real_t);
 real_t dot_Vector(const vector_t*, const vector_t*);
 
 void print_Vector(const vector_t*);
-
 void println_Vector(const vector_t*);
 
 #endif
